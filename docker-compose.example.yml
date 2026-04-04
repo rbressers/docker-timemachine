@@ -1,0 +1,16 @@
+services:
+  timemachine:
+    image: yourusername/docker-timemachine:latest
+    container_name: timemachine
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - TM_NAME=NUC-Backup
+      - TM_USER=timemachine
+      - TM_PASS=change_me_please
+      - TM_QUOTA=2000G
+    volumes:
+      - /path/to/your/storage:/backups
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
