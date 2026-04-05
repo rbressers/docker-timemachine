@@ -3,6 +3,11 @@ name: Build and Push Time Machine
 on:
   push:
     branches: [ "main" ]  # Triggers whenever you push to the main branch
+  schedule:
+    # This runs at 00:00 on the 1st of every month
+    - cron: '0 0 1 * *'
+  # This allows you to manually trigger it from the GitHub UI
+  workflow_dispatch:
 
 jobs:
   build-and-push:
