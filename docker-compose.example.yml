@@ -1,6 +1,6 @@
 services:
   timemachine:
-    image: yourusername/docker-timemachine:latest
+    image: rbressers/docker-timemachine:latest
     container_name: timemachine
     network_mode: host
     cap_add:
